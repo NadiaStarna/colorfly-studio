@@ -1,0 +1,34 @@
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+/* Header */
+.main-header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-top: 40px;
+}
+
+.message-card {
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Botón */
+.primary-button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
