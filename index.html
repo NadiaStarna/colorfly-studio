@@ -2,23 +2,39 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Proyecto Integrador</title>
+    <title>Colorfly-Studio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <!-- Header con título grande -->
     <header class="main-header">
-        <h1 class="main-title">Proyecto Integrador</h1>
+        <h1 class="main-title">Generador de Paletas</h1>
     </header>
 
+    <!-- Controles centrados -->
     <main class="main-content">
-        <article class="message-card">
-            <h2>Elige y combina colores fácilmente</h2>
-            <p id="message-text" class="message-text">Crea combinaciones de colores armoniosas de forma rápida y sencilla</p>
-            <button id="change-button" class="primary-button">Cambiar mensaje</button>
-        </article>
+        <div class="controls">
+            <label for="color-count">Cantidad de colores:</label>
+            <select id="color-count">
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+
+            <label for="color-type">Tipo de color:</label>
+            <select id="color-type">
+                <option value="hex">HEX</option>
+                <option value="hsl">HSL</option>
+            </select>
+
+            <button id="generate-btn" class="primary-button">Generar Paleta</button>
+        </div>
+
+        <!-- Contenedor de la paleta -->
+        <div id="palette-container" class="palette-container"></div>
     </main>
 
+    <!-- Footer limpio -->
     <footer class="main-footer">
         <p>©2026 - Nadia</p>
     </footer>
