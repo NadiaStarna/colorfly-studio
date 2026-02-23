@@ -1,10 +1,10 @@
-// 1️⃣ Obtener los elementos del HTML
+// Obtener elementos
 var generateBtn = document.getElementById("generate-btn");
 var paletteContainer = document.getElementById("palette-container");
 var colorCountSelect = document.getElementById("color-count");
 var colorTypeSelect = document.getElementById("color-type");
 
-// 2️⃣ Función para generar color HEX
+// Generar color HEX
 function generateHexColor() {
     var letters = "0123456789ABCDEF";
     var color = "#";
@@ -14,34 +14,23 @@ function generateHexColor() {
     return color;
 }
 
-// 3️⃣ Función para generar color HSL
+// Generar color HSL
 function generateHslColor() {
-    var h = Math.floor(Math.random() * 361); // 0 a 360
-    var s = Math.floor(Math.random() * 101); // 0 a 100%
-    var l = Math.floor(Math.random() * 101); // 0 a 100%
-    // Concatenación simple, no backticks
+    var h = Math.floor(Math.random() * 361);
+    var s = Math.floor(Math.random() * 101);
+    var l = Math.floor(Math.random() * 101);
     return "hsl(" + h + ", " + s + "%, " + l + "%)";
 }
 
-// 4️⃣ Función para generar la paleta
+// Generar paleta
 function generatePalette() {
-    // Limpiar paleta anterior
     paletteContainer.innerHTML = "";
-
-    // Cantidad y tipo de color
     var count = parseInt(colorCountSelect.value);
     var type = colorTypeSelect.value;
 
-    // Generar los cuadros
     for (var i = 0; i < count; i++) {
-        var color;
-        if (type === "hex") {
-            color = generateHexColor();
-        } else {
-            color = generateHslColor();
-        }
+        var color = type === "hex" ? generateHexColor() : generateHslColor();
 
-        // Crear contenedor del cuadro + texto
         var wrapper = document.createElement("div");
         wrapper.className = "color-wrapper";
 
@@ -49,15 +38,22 @@ function generatePalette() {
         box.className = "color-box";
         box.style.backgroundColor = color;
 
-        // Texto dentro del cuadro
         var text = document.createElement("span");
-        text.textContent = color;
-        box.appendChild(text);
+        text.className = "color-text";
+
+        if(type === "hsl") { // si es HSL/HCL
+            // separar "HSL" del valor
+            var parts = color.split("("); // divide en ["hsl", "…"]
+            text.innerHTML = parts[0] + "<br>(" + parts[1]; // pone HSL arriba y valor abajo
+        } else {
+            text.textContent = color; // HEX queda igual
+        }
 
         wrapper.appendChild(box);
+        wrapper.appendChild(text);
         paletteContainer.appendChild(wrapper);
     }
 }
 
-// 5️⃣ Conectar el botón
+// Botón para generar
 generateBtn.addEventListener("click", generatePalette);
