@@ -13,13 +13,21 @@ body, html {
     width: 100%;
     background: linear-gradient(90deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff);
     text-align: center;
-    padding: 40px 0;
+    padding: 15px 0;
 }
 
 .main-title {
     font-size: 4rem;
     color: #000;
     margin: 0;
+    line-height: 1.4;
+}
+
+.subtitle {
+  margin-top: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
 }
 
 /* ====== Controles ====== */
@@ -33,7 +41,7 @@ body, html {
 }
 
 .primary-button {
-    background-color: #ff6b6b;
+    background-color: #e28e8e;
     color: white;
     border: none;
     padding: 10px 20px;
