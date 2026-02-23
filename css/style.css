@@ -72,9 +72,9 @@ body, html {
 }
 
 .color-box {
-  width: 140px;
-  padding-top: 140px;
-  border-radius: 50%;
+  width: 100px;
+  padding-top: 230px;
+  border-radius: 50px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
