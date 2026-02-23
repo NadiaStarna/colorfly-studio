@@ -5,6 +5,7 @@
     <title>Generador de paletas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="main-header">
@@ -14,25 +15,35 @@
 
     <!-- Controles y paleta -->
     <main class="main-content">
-        <div class="controls">
-            <label for="color-count">Cantidad de colores:</label>
-            <select id="color-count">
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
 
-            <label for="color-type">Tipo de color:</label>
-            <select id="color-type">
-                <option value="hex">HEX</option>
-                <option value="hsl">HSL</option>
-            </select>
+    <div class="controls">
+        <label for="color-count">Cantidad de colores:</label>
+        <select id="color-count">
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
 
-            <button id="generate-btn" class="primary-button">Generar Paleta</button>
-        </div>
+        <label for="color-type">Tipo de color:</label>
+        <select id="color-type">
+            <option value="hex">HEX</option>
+            <option value="hsl">HSL</option>
+        </select>
 
-        <div id="palette-container" class="palette-container"></div>
-    </main>
+        <button id="generate-btn" class="primary-button">Generar Paleta</button>
+
+        <div id="tooltip" class="tooltip">Paleta guardada✨</div>
+    </div>
+
+    <div id="palette-container" class="palette-container"></div>
+
+    <div class="palette-actions">
+        <button id="savePalette">Guardar paleta</button>
+        <button id="clearPalettes">Limpiar paletas</button>
+    </div>
+
+    <div class="saved-palettes"></div>
+</main>    
 
     <!-- Footer -->
     <footer class="main-footer">

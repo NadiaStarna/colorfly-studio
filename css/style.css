@@ -42,7 +42,7 @@ body, html {
 }
 
 .primary-button {
-  background-color: #e28e8e;
+  background-color: #be8181;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -56,13 +56,14 @@ body, html {
   background-color: #ff4c4c;
 }
 
-/* ====== Paleta ====== */
+/* ====== Paleta principal ====== */
 .palette-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
-  margin: 0 20px 20px 20px;
+  margin: 0 20px 10px 20px;
+  min-height: 300px;
 }
 
 .color-wrapper {
@@ -89,11 +90,96 @@ body, html {
   margin-top: 5px;
   font-size: 0.9rem;
   font-weight: bold;
-  color: #000; /* negro */
+  color: #000;
 }
 
-/* ====== Footer ====== */
-.main-footer {
+/* ====== Botones guardar y limpiar paletas ====== */
+.palette-actions {
+  margin: 15px 0 10px 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.palette-actions button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #cacaca;
+  transition: background-color 0.3s;
+}
+
+.palette-actions button:hover {
+  background-color: #b0b0b0;
+}
+
+/* ====== Paletas guardadas ====== */
+.saved-palettes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* Cada grupo de paleta */
+.saved-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid #acacac; /* borde gris clarito */
+  border-radius: 40px;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Mini-óvalos */
+.saved-palettes .mini-swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.saved-palettes .mini-swatch:hover {
+  transform: scale(1.1);
+}
+
+/* Botón eliminar cruz */
+.delete-palette {
+    background: none;
+    border: none;
+    font-size: 28px; /* un poco más grande */
+    font-weight: bold;
+    cursor: pointer;
+    color: #7e7e7e;
+    margin-left: 10px;
+    line-height: 1;
+}
+
+.delete-palette:hover {
+    color: #333;
+}
+
+/* Tooltip */
+.tooltip {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Footer */
+.main-footer {  
   text-align: center;
   padding: 10px 0;
   color: #000;
