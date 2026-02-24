@@ -1,6 +1,6 @@
 /* ====== Body y estructura ====== */
 body, html {
-  background-color: #ffffff;
+  background-color: #ececec;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@ body, html {
 
 .subtitle {
   margin-top: 0;
-  font-size: 13px;
+  font-size: 0.95rem;
   font-weight: 400;
   color: #666;
 }
@@ -42,13 +42,13 @@ body, html {
 }
 
 .primary-button {
-  background-color: #be8181;
-  color: white;
+  background-color: #b8b8b8;
+  color: rgb(5, 5, 5);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: background-color 0.3s;
 }
 
@@ -87,10 +87,12 @@ body, html {
 }
 
 .color-text {
-  margin-top: 5px;
+  margin-top: 12px;
   font-size: 0.9rem;
   font-weight: bold;
   color: #000;
+  line-height: 1.1;
+  font-family: "Arial Narrow", Arial, Sans-serif;
 }
 
 /* ====== Botones guardar y limpiar paletas ====== */
@@ -108,6 +110,7 @@ body, html {
   cursor: pointer;
   background-color: #cacaca;
   transition: background-color 0.3s;
+  font-size: 0.9rem;
 }
 
 .palette-actions button:hover {
@@ -138,8 +141,8 @@ body, html {
 
 /* Mini-óvalos */
 .saved-palettes .mini-swatch {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.2s;
@@ -170,12 +173,13 @@ body, html {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: black;
-  color: white;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffdfba;
   padding: 8px 12px;
   border-radius: 6px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  font-size: 0.9rem;
 }
 
 /* Footer */
@@ -185,4 +189,26 @@ body, html {
   color: #000;
   background: transparent;
   margin-top: auto;
+  font-size: 0.8rem;
+}
+
+#color-hint {
+  position: fixed;
+  bottom: 30px;         
+  left: 10%;             
+  transform: translateX(-50%); 
+  background-color: rgba(0, 0, 0, 0.9); 
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+  font-size: 0.9rem;
+  z-index: 999;
+
+  /* Centrado del texto dentro del cuadro */
+  text-align: center;       /* centra el texto horizontalmente */
+  display: flex;
+  justify-content: center;  /* centra horizontalmente icono y texto */
+  align-items: center;      /* centra verticalmente */
+  gap: 8px;                 /* espacio entre icono y texto */
 }

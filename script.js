@@ -53,6 +53,18 @@ function generatePalette() {
         box.className = "color-box";
         box.style.backgroundColor = color;
 
+        // Evento click para copiar el color al presionar el óvalo
+        box.addEventListener("click", function() {
+            navigator.clipboard.writeText(color).then(function() {
+                tooltip.textContent = color + " copiado ✨"; // muestra el color original
+                tooltip.style.opacity = "1";
+                setTimeout(function() {
+                    tooltip.style.opacity = "0";
+                    tooltip.textContent = "Paleta guardada ✨"; // vuelve al mensaje original
+                }, 1500);
+            });
+        });
+
         var text = document.createElement("span");
         text.className = "color-text";
 
