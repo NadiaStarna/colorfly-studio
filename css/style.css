@@ -1,6 +1,6 @@
 /* ====== Body y estructura ====== */
 body, html {
-  background-color: #ececec;
+  background-color: #eeeeee;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -211,4 +211,47 @@ body, html {
   justify-content: center;  /* centra horizontalmente icono y texto */
   align-items: center;      /* centra verticalmente */
   gap: 8px;                 /* espacio entre icono y texto */
+}
+
+/* ====== Estilos para celulares ====== */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 11px;
+  }
+
+  .color-box {
+    width: 70px;
+    padding-top: 160px;
+  }
+
+  .color-text {
+    font-size: 0.8rem;
+  }
+
+  .palette-actions button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .saved-palettes .mini-swatch {
+    width: 35px;
+    height: 35px;
+  }
+
+  #color-hint {
+    bottom: 15px;
+    left: 17%;
+    font-size: 0.7rem;
+    padding: 6px 12px;
+    background-color: #f56666f5;
+    color: #000;
+  }
+
+  .main-footer {
+    font-size: 0.6rem;
+  }
 }
