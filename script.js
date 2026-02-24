@@ -27,7 +27,7 @@ function generateHexColor() {
     return color;
 }
 
-// Generar color HSL
+// Generar color HSL/HCL
 function generateHslColor() {
     var h = Math.floor(Math.random() * 361);
     var s = Math.floor(Math.random() * 101);
@@ -53,14 +53,18 @@ function generatePalette() {
         box.className = "color-box";
         box.style.backgroundColor = color;
 
-        // Evento click para copiar el color al presionar el óvalo
+        // ===== Agregado: guardar color original para copiar correctamente =====
+        box.setAttribute("data-color", color);
+
+        // Evento click para copiar color al presionar el óvalo
         box.addEventListener("click", function() {
-            navigator.clipboard.writeText(color).then(function() {
-                tooltip.textContent = color + " copiado ✨"; // muestra el color original
+            var originalColor = this.getAttribute("data-color"); // usar el color original
+            navigator.clipboard.writeText(originalColor).then(function() {
+                tooltip.textContent = originalColor + " copiado ✨";
                 tooltip.style.opacity = "1";
                 setTimeout(function() {
                     tooltip.style.opacity = "0";
-                    tooltip.textContent = "Paleta guardada ✨"; // vuelve al mensaje original
+                    tooltip.textContent = "Paleta guardada ✨";
                 }, 1500);
             });
         });
@@ -68,9 +72,9 @@ function generatePalette() {
         var text = document.createElement("span");
         text.className = "color-text";
 
-        if(type === "hsl") { // si es HSL
+        if(type === "hsl") { // si es HSL/HCL
             var parts = color.split("(");
-            text.innerHTML = parts[0] + "<br>(" + parts[1]; // HSL arriba, valor abajo
+            text.innerHTML = parts[0] + "<br>(" + parts[1]; // HSL/HCL arriba, valor abajo
         } else {
             text.textContent = color; // HEX
         }
@@ -95,7 +99,8 @@ saveButton.addEventListener("click", function() {
 
     var currentPalette = [];
     boxes.forEach(function(box) {
-        currentPalette.push(box.style.backgroundColor);
+        // ===== Modificado: usar color original guardado =====
+        currentPalette.push(box.getAttribute("data-color"));
     });
 
     var paletteString = currentPalette.join(",");
@@ -114,7 +119,6 @@ saveButton.addEventListener("click", function() {
         mini.className = "mini-swatch";
         mini.style.backgroundColor = color;
 
-        // Copiar color al hacer clic
         mini.addEventListener("click", function() {
             navigator.clipboard.writeText(color).then(function() {
                 tooltip.textContent = color + " copiado ✨";
@@ -129,7 +133,7 @@ saveButton.addEventListener("click", function() {
         paletteGroup.appendChild(mini);
     });
 
-    // Botón eliminar de esta paleta (a la derecha)
+    // Botón eliminar de esta paleta
     var deleteBtn = document.createElement("button");
     deleteBtn.textContent = "×";
     deleteBtn.className = "delete-palette";
