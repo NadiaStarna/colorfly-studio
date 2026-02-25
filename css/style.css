@@ -74,7 +74,7 @@ body, html {
 
 .color-box {
   width: 100px;
-  padding-top: 230px;
+  padding-top: 200px;
   border-radius: 50px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s ease;
