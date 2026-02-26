@@ -57,18 +57,16 @@ ProyectoM1_NadiaStarna/
 
 ---
 
-## 📦 Instalación y uso
+## 📦 Flujo Principal de Uso
 
-1. Clonar el repositorio:
-
-https://github.com/NadiaStarna/ProyectoM1_NadiaStarna.git
-
-
-2. Ingresar a la carpeta del proyecto.
-
-3. Abrir el archivo `index.html` en el navegador.
-
-También puede accederse directamente desde el link de GitHub Pages.
+1 El usuario ingresa a la página.
+2 Selecciona la cantidad de colores.
+3 Elige el tipo de formato (HEX o HSL).
+4 Presiona “Generar Paleta”.
+5 Se muestran colores generados dinámicamente.
+6 Puede hacer click en un color para copiarlo.
+7 Puede guardar la paleta generada.
+8 Puede limpiar paletas guardadas.
 
 ---
 
