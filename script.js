@@ -27,7 +27,7 @@ function generateHexColor() {
     return color;
 }
 
-// Generar color HSL/HCL
+// Generar color HSL
 function generateHslColor() {
     var h = Math.floor(Math.random() * 361);
     var s = Math.floor(Math.random() * 101);
@@ -58,7 +58,7 @@ function generatePalette() {
 
         // Evento click para copiar color al presionar el óvalo
         box.addEventListener("click", function() {
-            var originalColor = this.getAttribute("data-color"); // usar el color original
+            var originalColor = this.getAttribute("data-color"); 
             navigator.clipboard.writeText(originalColor).then(function() {
                 tooltip.textContent = originalColor + " copiado ✨";
                 tooltip.style.opacity = "1";
@@ -74,7 +74,7 @@ function generatePalette() {
 
         if(type === "hsl") { // si es HSL/HCL
             var parts = color.split("(");
-            text.innerHTML = parts[0] + "<br>(" + parts[1]; // HSL/HCL arriba, valor abajo
+            text.innerHTML = parts[0] + "<br>(" + parts[1]; 
         } else {
             text.textContent = color; // HEX
         }
@@ -95,7 +95,7 @@ generateBtn.addEventListener("click", generatePalette);
 // ==========================
 saveButton.addEventListener("click", function() {
     var boxes = document.querySelectorAll(".color-box");
-    if (boxes.length === 0) return; // No hay paleta
+    if (boxes.length === 0) return; 
 
     var currentPalette = [];
     boxes.forEach(function(box) {

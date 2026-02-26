@@ -133,7 +133,7 @@ body, html {
   justify-content: center;
   align-items: center;
   padding: 8px 14px;
-  border: 1px solid #acacac; /* borde gris clarito */
+  border: 1px solid #acacac; 
   border-radius: 40px;
   background-color: transparent;
   position: relative;
@@ -156,7 +156,7 @@ body, html {
 .delete-palette {
     background: none;
     border: none;
-    font-size: 28px; /* un poco más grande */
+    font-size: 28px; 
     font-weight: bold;
     cursor: pointer;
     color: #7e7e7e;
@@ -206,11 +206,11 @@ body, html {
   z-index: 999;
 
   /* Centrado del texto dentro del cuadro */
-  text-align: center;       /* centra el texto horizontalmente */
+  text-align: center;    
   display: flex;
-  justify-content: center;  /* centra horizontalmente icono y texto */
-  align-items: center;      /* centra verticalmente */
-  gap: 8px;                 /* espacio entre icono y texto */
+  justify-content: center;  
+  align-items: center;    
+  gap: 8px;              
 }
 
 /* ====== Estilos para celulares ====== */
